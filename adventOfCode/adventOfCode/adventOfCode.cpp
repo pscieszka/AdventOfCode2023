@@ -1,8 +1,8 @@
-﻿
-#include <iostream>
-#include "Days.h"
+﻿#include "Days.h"
+
 int main()
 {
-
+	
+	calculateDay1();
 }
 

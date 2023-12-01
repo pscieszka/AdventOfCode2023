@@ -1,10 +1,3 @@
-#pragma once
-#include "Days.h"
-#include <fstream>
-#include <string>
-#include <iostream>
-using namespace std;
-
 void calculateDay1()
 {
 	ifstream file("input.txt");
@@ -39,5 +32,3 @@ void calculateDay1()
 	}
 	
 }
-
-
