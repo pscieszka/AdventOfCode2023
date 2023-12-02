@@ -83,7 +83,6 @@ void calculateDay1()
 		
 	}
 	cout << "sum = " << sum << endl;
-	
 }
 
 
