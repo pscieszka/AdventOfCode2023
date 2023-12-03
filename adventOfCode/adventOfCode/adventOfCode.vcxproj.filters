@@ -29,6 +29,9 @@
     <ClInclude Include="Day1.h">
       <Filter>Pliki źródłowe</Filter>
     </ClInclude>
+    <ClInclude Include="Day3.h">
+      <Filter>Pliki źródłowe</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
