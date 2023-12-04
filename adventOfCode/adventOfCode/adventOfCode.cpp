@@ -3,7 +3,7 @@
 int main()
 {
 	
-	calculateDay3();
+	calculateDay4();
 }
 
 //536043
