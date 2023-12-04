@@ -1,24 +1,18 @@
 #pragma once
-
-
 #include <fstream>
 #include <string>
 #include <iostream>
 #include <vector>
-#include <set>
 #include <sstream>
 using namespace std;
 
-
-
 void calculateDay4() {
+
+    //Parse data 
     ifstream file("input.txt");
     string line;
     string str;
-    int res = 0;
-    set<int>st;
-    vector<int> nums1, nums2;
-
+    vector<vector<int>>dp;
     while (std::getline(file, line)) {
         str = line;
         int idx1 = 0;
@@ -37,8 +31,7 @@ void calculateDay4() {
         }
         string str1 = line.substr(idx1, idx2 - idx1 - 1);
         string str2 = line.substr(idx2);
-        cout << "str1=" << str1 << endl;
-        cout << "str2=" << str2 << endl;
+       
         istringstream iss1(str1);
         istringstream iss2(str2);
 
@@ -59,19 +52,26 @@ void calculateDay4() {
                 duplicates += entry.second - 1;
             }
         }
-        cout << "dupliates =" << duplicates << endl;
-        int x = 0;
-        for (int i = 0; i < duplicates; i++) {
-            if(x==0 && duplicates>0) x = 1;
-            x *= 2;
-        }
-        res += x;
-        cout << "res=" << res/2<< endl;
+        vector<int> row;
+        row.push_back(1);
+        row.push_back(duplicates);
+        dp.push_back(row);
 
-        
     }
-
-
+    //logic of task
+    for (int i = 0; i < dp.size(); ++i) {
+        int cards = dp[i][0];
+        for (int j = 0; j < cards; j++) {
+            for (int k = i+1; k < dp[i][1]+i+1; k++) {
+                dp[k][0]++;
+            }
+        }
+    }
+    int sum = 0;
+    for (size_t i = 0; i < dp.size(); ++i) {
+        sum += dp[i][0];
+    }
+    cout << "sum=" << sum;
 
 
 
