@@ -3,6 +3,6 @@
 int main()
 {
 	
-	calculateDay5();
+	calculateDay6();
 }
 
