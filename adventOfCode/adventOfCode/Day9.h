@@ -13,6 +13,7 @@ void calculateDay9() {
     std::string line;
     int sum = 0;
     vector<int> vec;
+    vector<int>vec2;
     while (getline(file, line)) {
         vec.clear();
         istringstream iss(line);
@@ -32,31 +33,29 @@ void calculateDay9() {
         while (flag) {
             flag = false;
             for (int i = j; i < vec.size() - (j - 1); i += 2) {
-
                 vec[i] = vec[i + 1] - vec[i - 1];
+                
                 if (vec[i] != 0) {
                     flag = true;
                 }
             }
             j++;
         }
-        for (auto i : vec) {
-            cout << i << " ";
-        }
-        cout << endl;
-        int res;
         
-        for (int i = vec.size()-1; i >= 0; i--) {
+       
+        for (int i = 1; i< vec.size(); i++) {
             if (vec[i] == 0) {
-                res = accumulate(vec.begin() + i, vec.end(), 0);
+                vec2 = vector<int>(vec.begin(), vec.begin()  + i);
                 break;
             }
         }
-        sum += res;
+        for (auto i : vec2) {
+            cout << i << " ";
+        }
+        cout << endl;
          
     }
-   
-    cout << sum-1 << endl;
+    
     
     file.close();
     
